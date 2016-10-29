@@ -22,9 +22,9 @@ public class BushWorldWorldGen implements IWorldGenerator {
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
 
         final int xChunk = chunkX * 16 + 8, zChunk = chunkZ * 16 + 8;
-        int xCh = chunkX * 16 + random.nextInt(16);
+        int xCh = chunkX * 16 + random.nextInt(16) + 8;
         int yCh = random.nextInt(128);
-        int zCh = chunkZ * 16 + random.nextInt(16);
+        int zCh = chunkZ * 16 + random.nextInt(16) + 8;
 
         final Biome biome = world.getBiomeGenForCoords(new BlockPos(xChunk + 16, 0, zChunk + 16));
         final BlockPos blockPos = new BlockPos(xCh, yCh + 64, zCh);
